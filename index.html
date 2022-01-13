@@ -9,41 +9,78 @@
 <body class="container">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="images/header-logo.svg" alt="Логотип mesto">
+      <img class="header header__logo" src="images/logo.png" alt="Логотип mesto">
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="images/lead-polka.jpg" alt="Изображен Жак-Ив Кусто">
-        <div class="profaile__info">
+        <img class="profile__avatar" src="images/жакивКусто.jpg" alt="Изображен Жак-Ив Кусто">
+        <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <p class="profile__subtitle">Исследователь океана</p>
-          <span class="profile__edit-btn">&#128393;</span>
+          <button class="profile__edit-btn"></button>
+          <p class="profile__subtitle">Исследователь&nbsp;океана</p>
         </div>
-        <div class="profile__add-btn">
-          <span class="add-btn">&plus;</span>
-        </div>
+          <button class="profile__add-btn"></button>
       </section>
       <section class="elements">
         <ul class="elements-list">
           <li class="element">
-            <img class="element-image" src="_" alt="Изображен пейзаж">
-            <h2 class="element-title">Карачаевск</h2>
-            <span>&#9825;</span>
+            <img class="element__image" src="images/Алтай.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Алтай</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="images/Долина предков.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Долина предков</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="images/Домбай.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Домбай</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="images/Кабардино_Балкария.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Кабардино-Балкария</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="images/Кисловодск.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Кисловодск</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img class="element__image" src="images/Чегет.jpg" alt="Изображен пейзаж">
+            <div class="element__place">
+              <h2 class="element__title">Чегет</h2>
+              <button class="element__icon element__icon_active"></button>
+            </div>
           </li>
         </ul>
       </section>
     </main>
-    <section class="overlay overlay_activ">
-      <div class="popup">
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" placeholder="Название" class="input__text>
-        <input type="text" placeholder="Название" class="input__text>
-        <button class="form__submit-btn form__submit-btn_action_add">
-      </div>
-    </section>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
     </footer>
   </div>
+  <section class="popup">
+    <button class="popup__close-btn"></button>
+    <form class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <input type="text" class="popup__text">
+      <input type="text" class="popup__text">
+      <button type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
+    </form>
+  </section>
+  <script src="scripts/index.js"></script>
 </body>
 </html>
