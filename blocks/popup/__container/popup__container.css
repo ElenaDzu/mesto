@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 195px auto 195px;
     max-width: 430px;
-    max-height: 330px;
+    min-height: 330px;
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 2%;
@@ -13,7 +13,7 @@
 @media (max-width: 598px) and (min-width: 320px) {
     .popup__container {
         max-width: 282px;
-        max-height: 322px;
+        min-height: 322px;
         margin-top: 123px;
         margin-bottom: auto;
     }
