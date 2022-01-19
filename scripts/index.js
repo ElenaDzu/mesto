@@ -15,6 +15,8 @@ function popupOpen(event) {
 
 function popupClose(event) {
   popup.classList.remove(popupOpenedClass);
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
 }
 
 function formSubmitHandler (event) {
