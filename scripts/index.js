@@ -9,14 +9,14 @@ const jobProfile = document.querySelector('.profile__subtitle');
 let nameInput = formElement.querySelector('.popup__text_value_name');
 let jobInput  = formElement.querySelector('.popup__text_value_job');
 
-function popupOpen(event) {
+function popupOpen() {
   popup.classList.add(popupOpenedClass);
-}
-
-function popupClose(event) {
-  popup.classList.remove(popupOpenedClass);
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
+}
+
+function popupClose() {
+  popup.classList.remove(popupOpenedClass);
 }
 
 function formSubmitHandler (event) {
