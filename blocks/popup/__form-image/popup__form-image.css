@@ -1,0 +1,15 @@
+.popup__form-image {
+    display: flex;
+    margin: 0 auto;
+    max-width: 75vw;
+    height: 74vh;
+    background-color: #FFFFFF;
+    border-radius: 2%;
+    position: relative;
+}
+
+@media (max-width: 598px) and (min-width: 320px) {
+  .popup__form-image {
+    max-width: 75vw;
+    }
+}
