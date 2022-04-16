@@ -9,62 +9,20 @@
 <body class="container">
   <div class="page">
     <header class="header">
-      <img class="header header__logo" src="images/logo.png" alt="Логотип mesto">
+      <a href="#"><img class="header header__logo" src="images/logo.png" alt="Логотип mesto"></a>
     </header>
     <main class="content">
       <section class="profile">
         <img class="profile__avatar" src="images/жакивКусто.jpg" alt="Изображен Жак-Ив Кусто">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-btn"></button>
+          <button class="profile__edit-btn" type="button"></button>
           <p class="profile__subtitle">Исследователь&nbsp;океана</p>
         </div>
-          <button class="profile__add-btn"></button>
+          <button class="profile__add-btn" type="button"></button>
       </section>
       <section class="elements">
         <ul class="elements-list">
-          <li class="element">
-            <img class="element__image" src="images/Altai.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Алтаи</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="images/Долина-предков.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Долина предков</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="images/Dombai.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Домбаи</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="images/Кабардино_Балкария.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Кабардино-Балкария</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="images/Кисловодск.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Кисловодск</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="images/Чегет.jpg" alt="Изображен пейзаж">
-            <div class="element__place">
-              <h2 class="element__title">Чегет</h2>
-              <button class="element__icon element__icon_active"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
@@ -72,15 +30,42 @@
       <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
     </footer>
   </div>
-  <section class="popup">
-    <button class="popup__close-btn"></button>
-    <form class="popup__container">
+  <section class="popup popup_edit">
+    <button class="popup__close-btn popup__close-btn_edit" type="reset"></button>
+    <form name="form" class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <input class="popup__text popup__text_value_name" type="text" name="name" value="Жак-Ив Кусто">
+      <input class="popup__text popup__text_value_name" type="text" name="name" value="Жак-Ив ">
       <input class="popup__text popup__text_value_job" type="text" name="job" value="Исследователь океана">
       <button type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
     </form>
   </section>
+  <section class="popup popup_add-newcard">
+    <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
+    <form name="form" class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <input class="popup__text popup__text_value_place" type="text" name="name" value="Название">
+      <input class="popup__text popup__text_value_link" type="text" name="link" value="Ссылка на картинку">
+      <button type="submit" value="Сбросить" class="popup__save-btn popup__create-btn">Создать</button>
+    </form>
+  </section>
+  <section class="popup popup_image">
+    <button class="popup__close-btn popup__close-btn_image"" type="reset"></button>
+    <figure class="popup__container">
+      <img class="popup__image-big">
+      <figcaption class="popup__image-name"></figcaption>
+    </figure>
+  </section>
+  
+  <template class="template">
+    <li class="element">
+      <button class="element__trash" type="button"></button>
+      <img class="element__image" src="" alt="Изображен пейзаж">
+      <div class="element__place">
+        <h2 class="element__title"></h2>
+        <button class="element__icon" type="button"></button>
+      </div>
+    </li>
+  </template>
   <script src="scripts/index.js"></script>
 </body>
 </html>

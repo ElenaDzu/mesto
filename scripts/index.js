@@ -70,15 +70,12 @@ function render() {
 
 function getElement(item) {
   const getElementTemplate = template.content.cloneNode(true);
+  getElementTemplate.querySelector('.element__image').src = item.image;
+  getElementTemplate.querySelector('.element__title').textContent = item.title;
   const buttonRemove = getElementTemplate.querySelector('.element__trash');
   const buttonLike = getElementTemplate.querySelector('.element__icon');
-  const imageElement = getElementTemplate.querySelector('.element__image')
-  const titleElement = getElementTemplate.querySelector('.element__title')
-  imageElement.src = item.image;
-  titleElement.textContent = item.title;
   buttonRemove.addEventListener('click', handleRemoveElement);
   buttonLike.addEventListener('click', handleLikeElement)
-  imageElement.addEventListener('click', () => {popupOpen(popupImage)});
   return getElementTemplate;
 }
 render();
