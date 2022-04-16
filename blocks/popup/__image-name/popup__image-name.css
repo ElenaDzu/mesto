@@ -11,6 +11,8 @@
 
 @media (max-width: 598px) and (min-width: 320px) {
   .popup__image-name {
-    max-width: 75vw;
+    margin-left: 40px;
+    margin-right: 40px;
+
     }
 }
