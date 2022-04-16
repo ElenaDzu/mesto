@@ -1,0 +1,8 @@
+.popup__image-big {
+    margin: 8px auto auto;
+    max-width: 75vw;
+    width: 100%;
+    height: 74vh;
+    position: relative;
+}
+

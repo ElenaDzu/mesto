@@ -1,0 +1,26 @@
+.popup__close-btn-image{
+  margin: 0 0 0 auto;
+  padding: 0;
+  border-style: none;
+  background: url(../../../images/Close\ Icon.png);
+  background-color: rgba(0, 0, 0, 0);
+  width: 32px;
+  min-height: 32px;
+
+}
+
+.popup__close-btn-image:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media (max-width: 598px) and (min-width: 320px) {
+  .popup__close-btn-image {
+    width: 20px;
+    height: 20px;
+    margin-top: 87px;
+    margin-right: 19px;
+    margin-left: 281px;
+    
+  }
+}

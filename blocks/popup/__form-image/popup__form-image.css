@@ -1,0 +1,14 @@
+.popup__form-image {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    max-height: 75vh;
+    width: 100%;
+}
+
+@media (max-width: 598px) and (min-width: 320px) {
+  .popup__form-image {
+    max-width: 75vw;
+    }
+}
