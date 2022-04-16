@@ -1,12 +1,11 @@
 .popup__close-btn-image{
-  margin: 0 0 0 auto;
   padding: 0;
+  margin:0 0 0 auto;
   border-style: none;
   background: url(../../../images/Close\ Icon.png);
   background-color: rgba(0, 0, 0, 0);
   width: 32px;
   min-height: 32px;
-
 }
 
 .popup__close-btn-image:hover {
