@@ -1,5 +1,12 @@
 .popup__closeform {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0 auto;
 }
+
+@media (max-width: 598px) and (min-width: 320px) {
+    .popup__closeform {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }

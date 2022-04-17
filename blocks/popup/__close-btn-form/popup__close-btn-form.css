@@ -13,10 +13,9 @@
 }
 
 @media (max-width: 598px) and (min-width: 320px) {
-  .popup__close-btn-image {
-    width: 20px;
-    height: 20px;
+  .popup__close-btn-form {
+    max-width: 20px;
     margin-top: 100px;
-    margin-right: 0;
+    margin-right: 0px;
   }
 }

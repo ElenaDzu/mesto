@@ -1,13 +1,6 @@
 .popup__image-big {
-    margin: 0;
+    margin: 0 auto;
     max-width: 75vw;
     max-height: 74vh;
-    width: 100%;
+    max-width: 100%;
 }
-
-@media (max-width: 598px) and (min-width: 320px) {
-    .popup__image-big {
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-  }
