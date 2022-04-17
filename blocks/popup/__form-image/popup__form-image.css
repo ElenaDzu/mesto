@@ -1,4 +1,5 @@
 .popup__form-image {
+<<<<<<< HEAD
     display: flex;
     margin: 0 auto;
     max-width: 75vw;
@@ -13,3 +14,16 @@
     max-width: 75vw;
     }
 }
+=======
+    margin: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (max-width: 598px) and (min-width: 320px) {
+    .popup__form-image {
+        margin-top: 16px;
+    }
+  }
+>>>>>>> Develope

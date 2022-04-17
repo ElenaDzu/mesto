@@ -6,6 +6,11 @@
   margin: 155px 385px 0 863px;
   width: 32px;
   height: 32px;
+} 
+
+.popup__close-btn:active + .popup__container { 
+  opacity:0;
+  transition:visibility 0s ,opacity 1s linear;
 }
 
 .popup__close-btn:hover {

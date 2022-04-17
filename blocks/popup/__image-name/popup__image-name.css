@@ -1,0 +1,11 @@
+.popup__image-name {
+    margin-top: 10px;
+    max-width: 291px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14.52px;
+    text-align: start;
+    color: white;
+  }
