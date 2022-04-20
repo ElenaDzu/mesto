@@ -21,7 +21,7 @@
         </div>
           <button class="profile__add-btn" type="button"></button>
       </section>
-      <div class="elements">
+      <div class="elements" >
         <ul class="elements-list">
         </ul>
       </div>
@@ -31,34 +31,36 @@
     </footer>
   </div>
   <section class="popup popup_edit">
-    <button class="popup__close-btn popup__close-btn_edit" type="reset"></button>
-    <form name="form" class="popup__container">
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <input class="popup__text popup__text_value_name" type="text" name="name" value="Жак-Ив">
-      <input class="popup__text popup__text_value_job" type="text" name="job" value="Исследователь океана">
-      <button type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
-    </form>
+    <div class="popup__block">
+      <button class="popup__close-btn popup__close-btn_edit" type="reset"></button>
+      <form name="form" class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__text popup__text_value_name" type="text" name="name" value="Жак-Ив">
+        <input class="popup__text popup__text_value_job" type="text" name="job" value="Исследователь океана">
+        <button type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
+      </form>
+    </div>
   </section>
   <section class="popup popup_add-newcard">
-    <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
-    <form name="form" class="popup__container">
-      <h2 class="popup__title">Новое место</h2>
-      <input class="popup__text popup__text_value_place" type="text" name="name" value="Название">
-      <input class="popup__text popup__text_value_link" type="text" name="link" value="Ссылка на картинку">
-      <button type="submit" value="Сбросить" class="popup__save-btn popup__create-btn">Создать</button>
-    </form>
+    <div class="popup__block">
+      <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
+      <form name="form" class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <input class="popup__text popup__text_value_place" type="text" name="name" placeholder="Введите название места">
+        <input class="popup__text popup__text_value_link" type="text" name="link" placeholder="Введите ссылку на изображение">
+        <button type="submit" value="Сбросить" class="popup__save-btn">Создать</button>
+      </form>
+    </div>
   </section>
-  <div class="popup popup_image">
-    <div class="popup__closeform">
-      <div class="popup__close-btn-form">
-        <button class="popup__close-btn-image" type="reset"></button>
-      </div>
-      <div class="popup__form-image">
+  <section class="popup popup_image">
+    <div class="popup__block">
+      <button class="popup__close-btn popup__close-btn_image" type="reset"></button>
+      <div name="form" class="popup__container popup__container_type_image">
         <img class="popup__image-big" alt="#" src="#">
-        <div class="popup__image-name">город</div>
+        <p class="popup__image-name">город</p>
       </div>
     </div>
-  </div>
+  </section>
   
   <template class="template">
     <li class="element">

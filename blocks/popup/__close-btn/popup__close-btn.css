@@ -1,30 +1,24 @@
 .popup__close-btn{
-  position: fixed;
+  padding: 0;
+  margin:155px -40px 0 auto;
+  position: relative;
   border-style: none;
   background-image: url(../../../images/Close\ Icon.png);
   background-color: rgba(0, 0, 0, 0);
-  margin: 155px 385px 0 863px;
   width: 32px;
-  height: 32px;
+  min-height: 32px;
+  background-size: cover;
 } 
-
-.popup__close-btn:active + .popup__container { 
-  opacity:0;
-  transition:visibility 0s ,opacity 1s linear;
-}
 
 .popup__close-btn:hover {
   cursor: pointer;
   opacity: .6;
 }
 
-@media (max-width: 598px) and (min-width: 320px) {
+@media (max-width: 380px) and (min-width: 320px) {
   .popup__close-btn {
     width: 20px;
-    height: 20px;
-    margin-top: 87px;
-    margin-right: 19px;
-    margin-left: 281px;
-    background-size: cover;
+    min-height: 20px;
+    margin:107px 0 0 auto;
   }
 }
