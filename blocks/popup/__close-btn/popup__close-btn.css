@@ -1,6 +1,6 @@
 .popup__close-btn{
   padding: 0;
-  margin:155px -40px 0 auto;
+  margin:auto -40px 0 auto;
   position: relative;
   border-style: none;
   background-image: url(../../../images/Close\ Icon.png);
@@ -19,6 +19,6 @@
   .popup__close-btn {
     width: 20px;
     min-height: 20px;
-    margin:107px 0 0 auto;
+    margin-right: 0;
   }
 }
