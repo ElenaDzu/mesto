@@ -33,18 +33,21 @@
   <section class="popup popup_edit">
     <div class="popup__block">
       <button class="popup__close-btn popup__close-btn_edit" type="reset"></button>
-      <form name="form" class="popup__container">
+      <form name="form" class="popup__container" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
         <input
+        id="text-input"
         required
-         class="popup__text popup__text_value_name"
-          type="text" 
-          name="name"
-           value="Жак-Ив"
-           minlength="2"
-           maxlength="40"
+        class="popup__text popup__text_value_name"
+        type="text" 
+        name="name"
+        value="Жак-Ив"
+        minlength="2"
+        maxlength="40"
         >
+        <span class="popup__input-error text-input-error"></span>
         <input 
+        id="job-input"
         required
         class="popup__text popup__text_value_job" 
         type="text" 
@@ -53,30 +56,35 @@
         minlength="2"
         maxlength="200"
         >
-        <button type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
+        <span class="popup__input-error job-input-error"></span>
+        <button disabled type="submit" value="Сохранить" class="popup__save-btn">Сохранить</button>
       </form>
     </div>
   </section>
   <section class="popup popup_add-newcard">
     <div class="popup__block">
       <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
-      <form name="form" class="popup__container">
+      <form name="form" class="popup__container" novalidate>
         <h2 class="popup__title">Новое место</h2>
         <input
+        id="text-input"
         required
          class="popup__text popup__text_value_place"
           type="text" name="name" 
-          placeholder="Введите название места"
           minlength="2"
           maxlength="30"
+          placeholder="Введите название места"
           >
+          <span class="popup__input-error text-input-error"></span>
         <input
+        id="link-input"
         required
          class="popup__text popup__text_value_link"
           type="url"
           name="link" 
           placeholder="Введите ссылку на изображение">
-        <button type="submit" value="Сбросить" class="popup__save-btn">Создать</button>
+          <span class="popup__input-error link-input-error"></span>
+        <button disabled type="submit" value="Сбросить" class="popup__save-btn">Создать</button>
       </form>
     </div>
   </section>
@@ -101,5 +109,6 @@
     </li>
   </template>
   <script src="scripts/index.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 </html>
