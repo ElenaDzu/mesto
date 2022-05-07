@@ -55,13 +55,6 @@ function closePopup(popup) {
   popup.removeEventListener('keydown', handleEscUp);
 }
 
-const handleEscUp = (evt) => {
-  const activePopup = document.querySelector('.popup_opened');
-  if (evt.keyCode === 27) {
-    closePopup(activePopup);
-  };
-};
-
 function handleProfileFormSubmit (event) {
   event.preventDefault();
   nameProfile.textContent = nameInput.value;
@@ -73,7 +66,6 @@ function render() {
   const elements = initialCards.map(getElement);
   listElement.append(...elements);
 }
-
 
 function getElement(item) {
   const getElementTemplate = template.content.cloneNode(true);
@@ -135,7 +127,12 @@ popupCloseOverlays.forEach((popup) => {
   })
 });
 
-
+const handleEscUp = (e) => {
+  const activePopup = document.querySelector('.popup_opened');
+  if (e.which == 27) {
+    closePopup(activePopup);
+  };
+};
 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 popupAddCard.addEventListener('submit', handleAddElement);
