@@ -48,12 +48,12 @@ const initialCards = [
 
 function openPopup(popup) {
   popup.classList.add(popupOpenedClass);
-  popup.addEventListener('keydown', handleEscUp);
+  document.addEventListener('keydown', handleEscUp);
 }
 
 function closePopup(popup) {
   popup.classList.remove(popupOpenedClass);
-  popup.removeEventListener('keydown', handleEscUp);
+  document.removeEventListener('keydown', handleEscUp);
 }
 
 function handleProfileFormSubmit (event) {
