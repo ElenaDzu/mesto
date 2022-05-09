@@ -10,7 +10,7 @@ const imageName = popupImage.querySelector('.popup__image-name');
 const popupOpenedClass = ('popup_opened');
 const popupText = document.querySelector('.popup__text');
 const profileForm = popupEdit.querySelector('.popup__container');
-const addCardForm = popupAddCard.querySelector('.popup__container');
+const сardAddForm = popupAddCard.querySelector('.popup__container');
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const nameInput = profileForm.querySelector('.popup__text_value_name');
@@ -101,9 +101,12 @@ function handleLikeElement(evt) {
 function handleAddElement(event) {
   event.preventDefault();
   const element = getElement({title: inputValuePlace.value, image: inputValueLink.value});
-  closePopup(popupAddCard)
+  const activeButton = event.target.querySelector('.popup__save-btn') 
+  closePopup(popupAddCard);
   listElement.prepend(element);
-  addCardForm.reset();
+  activeButton.classList.add('popup__save-btn_inactive');
+  activeButton.setAttribute('disabled', 'disabled');
+  сardAddForm.reset();
 };
 
 buttonEditPopup.addEventListener('click', function() {
@@ -136,4 +139,4 @@ const handleEscUp = (evt) => {
 };
 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-addCardForm.addEventListener('submit', handleAddElement);
+сardAddForm.addEventListener('submit', handleAddElement);
