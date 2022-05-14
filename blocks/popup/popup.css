@@ -15,7 +15,3 @@
   opacity: 0;
   transition: visibility 1s, opacity 1s ease;
 }
-
-.popup__image {
-  opacity: 0.9;
-}
