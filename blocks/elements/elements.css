@@ -1,8 +1,9 @@
 .elements {
   padding: 0;
-  margin: 51px auto 0;
+  margin: 51px 0 0;
   width: 100%;
   max-width: 880px;
+  align-self: center;
 }
 
 @media (max-width: 598px) and (min-width: 320px) {
