@@ -38,4 +38,6 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
 @import url(../blocks/profile/__title/profile__title.css);
-
+* {
+    outline: 1px solid red;
+}
