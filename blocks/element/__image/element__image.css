@@ -3,9 +3,10 @@
   width: 282px;
   height: 282px;
   object-fit: cover;
-  background-size: cover;
   border-radius: 10px 10px 0 0;
   outline: 1px solid greenyellow;
+  justify-content: center;
+  justify-self: center;
 }
 
 .element__image:hover {
