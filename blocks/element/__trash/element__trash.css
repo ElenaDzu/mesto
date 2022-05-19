@@ -17,6 +17,6 @@
 
 @media (max-width: 598px) and (min-width: 320px) {
   .element__trash {
-    max-width: 18px;
+    max-width: 11px;
   }
 }

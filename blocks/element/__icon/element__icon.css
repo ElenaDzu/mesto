@@ -16,6 +16,6 @@
 
 @media (max-width: 598px) and (min-width: 320px) {
   .element__icon {
-    max-width: 22px;
+    max-width: 15px;
   }
 }
