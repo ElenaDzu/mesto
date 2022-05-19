@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   background: #000000;
+  outline: 1px solid blueviolet;
 }
 
 @media (max-width: 419px)and (min-width: 320px) {
