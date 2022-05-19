@@ -65,5 +65,6 @@ enableValidation({
   buttonElement: '.popup__save-btn',
   saveBtnInactive:'popup__save-btn_inactive',
   textTypeError: 'popup__text_type_error',
-  inputErrorActive: 'popup__input-error_active'
+  inputErrorActive: 'popup__input-error_active',
 }); 
+
