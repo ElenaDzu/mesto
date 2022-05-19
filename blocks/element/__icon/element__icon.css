@@ -1,6 +1,7 @@
 .element__icon {
   margin: 28px 20px 30px 30px;
-  width: 12px;
+  padding: 0;
+  width: 22px;
   height: 19px;
   background-size: contain;
   background-color: #FFFFFF;

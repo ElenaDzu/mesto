@@ -1,6 +1,7 @@
 .element__trash {
   margin: 20px 20px 323px 244px;
-  width: 8px;
+  padding: 0;
+  width: 18px;
   height: 19px;
   position: absolute;
   border: none;
