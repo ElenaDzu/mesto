@@ -6,6 +6,7 @@
   background-size: contain;
   background-color: #FFFFFF;
   background-image: url(../../../images/heart.png);
+  background-repeat: no-repeat;
   border: none;
 }
 
