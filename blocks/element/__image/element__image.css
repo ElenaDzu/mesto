@@ -3,6 +3,7 @@
   width: 282px;
   height: 282px;
   object-fit: cover;
+  background-size: contain;
   border-radius: 10px 10px 0 0;
   outline: 1px solid greenyellow;
 }
