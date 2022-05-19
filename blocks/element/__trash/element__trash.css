@@ -6,6 +6,7 @@
   border: none;
   background-color: rgba(0,0,0,0.0);
   background-image: url(../../../images/Trash.png);
+  background-size: cover;
 }
 
 .element__trash:hover {

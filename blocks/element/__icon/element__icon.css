@@ -2,7 +2,7 @@
   margin: 28px 20px 30px 30px;
   width: 22px;
   height: 19px;
-  background-size: cover;
+  background-size: contain;
   background-color: #FFFFFF;
   background-image: url(../../../images/heart.png);
   border: none;
