@@ -1,5 +1,8 @@
 
-const showInputError = (formElement, inputElement, errorMessage, config) => {
+import Validate from "./FormValidator.js";
+
+
+/*const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(config.textTypeError);
   errorElement.textContent = errorMessage;
@@ -45,15 +48,18 @@ const setEventListeners = (formElement, config) => {
       toggleButtonState(inputList, submitElement, config);
     });
   });
-};
+};*/
+
 
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.form));
   formList.forEach((formElement) => {
-    formElement.addEventListener('submit', (evt) => {
+    const currentValidation = new Validate(config, formElement)
+    currentValidation.enableValidation()
+    /**formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
-    setEventListeners(formElement, config);
+    setEventListeners(formElement, config);*/
   });
 };
 
@@ -63,4 +69,8 @@ enableValidation({
   buttonElement: '.popup__save-btn',
   saveBtnInactive:'popup__save-btn_inactive',
   textTypeError: 'popup__text_type_error',
+  inputErrorActive: 'popup__input-error_active' 
 });
+
+
+ 

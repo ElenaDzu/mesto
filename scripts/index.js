@@ -1,12 +1,14 @@
+import Card from "./Card.js";
+
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const popupCloseButtons = document.querySelectorAll('.popup__close-btn');
 const popupCloseOverlays = document.querySelectorAll('.popup');
 const popupEdit = document.querySelector('.popup_edit');
 const popupAddCard = document.querySelector('.popup_add-newcard');
-const popupImage = document.querySelector('.popup_image');
-const imageBig = popupImage.querySelector('.popup__image-big');
-const imageName = popupImage.querySelector('.popup__image-name');
+export const popupImage = document.querySelector('.popup_image');
+export const imageBig = popupImage.querySelector('.popup__image-big');
+export const imageName = popupImage.querySelector('.popup__image-name');
 const popupOpenedClass = ('popup_opened');
 const popupText = document.querySelector('.popup__text');
 const profileForm = popupEdit.querySelector('.popup__container');
@@ -46,7 +48,7 @@ const initialCards = [
   }
 ];
 
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add(popupOpenedClass);
   document.addEventListener('keydown', handleEscUp);
 }
@@ -64,9 +66,18 @@ function handleProfileFormSubmit (event) {
 }
 
 function render() {
+  initialCards.forEach((item) => {
+    const card = new Card(item.title, item.image, '.template');
+    const cardElement = card.generateCard();
+    listElement.append(cardElement);
+  }); 
+}
+render()
+
+/**function render() {
   const elements = initialCards.map(getElement);
   listElement.append(...elements);
-}
+
 
 function getElement(item) {
   const getElementTemplate = template.content.cloneNode(true);
@@ -78,10 +89,10 @@ function getElement(item) {
   elementImage.alt = item.title
   elementTitle.textContent = item.title
   elementImage.addEventListener('click',  function (event) {
-  imageBig.src = event.target.src
-  imageBig.alt = event.target.src
-  imageName.textContent = event.target.alt
-  openPopup(popupImage)
+    imageBig.src = event.target.src
+    imageBig.alt = event.target.src
+    imageName.textContent = event.target.alt
+    openPopup(popupImage)
   })
   buttonRemove.addEventListener('click', handleRemoveElement)
   buttonLike.addEventListener('click', handleLikeElement)
@@ -97,13 +108,15 @@ function handleRemoveElement(evt) {
 function handleLikeElement(evt) {
   evt.target.classList.toggle('element__icon_active');
 }
-  
+**/
+
+
 function handleAddElement(event) {
   event.preventDefault();
-  const element = getElement({title: inputValuePlace.value, image: inputValueLink.value});
+  const card = new Card(inputValuePlace.value, inputValueLink.value, '.template');
   const activeButton = event.target.querySelector('.popup__save-btn') 
   closePopup(popupAddCard);
-  listElement.prepend(element);
+  listElement.prepend(card.generateCard());
   activeButton.classList.add('popup__save-btn_inactive');
   activeButton.setAttribute('disabled', 'disabled');
   сardAddForm.reset();
@@ -114,6 +127,7 @@ buttonEditPopup.addEventListener('click', function() {
   nameInput.value = nameProfile.textContent
   jobInput.value = jobProfile.textContent
 });
+
 buttonAddElement.addEventListener('click', function() {
   openPopup(popupAddCard)
 });
