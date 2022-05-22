@@ -74,43 +74,6 @@ function render() {
 }
 render()
 
-/**function render() {
-  const elements = initialCards.map(getElement);
-  listElement.append(...elements);
-
-
-function getElement(item) {
-  const getElementTemplate = template.content.cloneNode(true);
-  const elementImage = getElementTemplate.querySelector('.element__image')
-  const elementTitle = getElementTemplate.querySelector('.element__title')
-  const buttonRemove = getElementTemplate.querySelector('.element__trash')
-  const buttonLike = getElementTemplate.querySelector('.element__icon')
-  elementImage.src = item.image
-  elementImage.alt = item.title
-  elementTitle.textContent = item.title
-  elementImage.addEventListener('click',  function (event) {
-    imageBig.src = event.target.src
-    imageBig.alt = event.target.src
-    imageName.textContent = event.target.alt
-    openPopup(popupImage)
-  })
-  buttonRemove.addEventListener('click', handleRemoveElement)
-  buttonLike.addEventListener('click', handleLikeElement)
-  return getElementTemplate
-}
-render();
-
-function handleRemoveElement(evt) {
-  const element = evt.target.closest('.element');
-  element.remove();
-}
-
-function handleLikeElement(evt) {
-  evt.target.classList.toggle('element__icon_active');
-}
-**/
-
-
 function handleAddElement(event) {
   event.preventDefault();
   const card = new Card(inputValuePlace.value, inputValueLink.value, '.template');

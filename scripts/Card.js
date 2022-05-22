@@ -7,7 +7,6 @@ export default class Card {
         this._selector = selector;
     }
 
-    /**Определение шаблона */ 
     _getTemplate(selector) {
         const cardElement = document
           .querySelector(selector)
@@ -15,8 +14,7 @@ export default class Card {
           .cloneNode(true);
         return cardElement;
     }
-    
-    /**Слушатель удаления */                                                                                      
+                                                                                      
     _getButtonRemoveLisener (element) {
         element
         .querySelector('.element__trash')
@@ -26,7 +24,6 @@ export default class Card {
         })
     }
 
-    /**Слушатель лайка */ 
     _getButtonLikeLisener (element) {
         element
         .querySelector('.element__icon')
@@ -34,7 +31,7 @@ export default class Card {
             event.target.classList.toggle('element__icon_active');
         })
     }
-    /**Слушатель увеличения картинки */ 
+
     _getBigView (element){
         element
         .addEventListener('click', function (event){
@@ -44,7 +41,7 @@ export default class Card {
             openPopup(popupImage)
         })   
     }
-    /**Возвращение готовой карточки*/ 
+
     generateCard() {
         this._element = this._getTemplate(this._selector);
         const elementImage = this._element.querySelector('.element__image')
