@@ -1,24 +1,17 @@
 
 import FormValidator from "./FormValidator.js";
+export var profileValidation = null;
+export var newCardValidation = null;
 
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.form));
-  formList.forEach((formElement) => {
-    const currentValidation = new FormValidator(config, formElement)
-    currentValidation.enableValidation()
-  });
+export const enableValidation = (config) => {
+  profileValidation = new FormValidator(config, document.querySelector('.popup_edit').querySelector('.popup__container'));
+  newCardValidation = new FormValidator(config, document.querySelector('.popup_add-newcard').querySelector('.popup__container'));
+  profileValidation.enableValidation();
+  newCardValidation.enableValidation();  
+
 };
-const data = {
-  form: '.popup__container',
-  formInput: '.popup__text',
-  buttonElement: '.popup__save-btn',
-  saveBtnInactive:'popup__save-btn_inactive',
-  textTypeError: 'popup__text_type_error',
-  inputErrorActive: 'popup__input-error_active' 
-}
 
 enableValidation({
-  form: '.popup__container',
   formInput: '.popup__text',
   buttonElement: '.popup__save-btn',
   saveBtnInactive:'popup__save-btn_inactive',
@@ -26,4 +19,3 @@ enableValidation({
   inputErrorActive: 'popup__input-error_active' 
 });
 
-export {enableValidation, data}

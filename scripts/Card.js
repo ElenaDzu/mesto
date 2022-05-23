@@ -11,7 +11,6 @@ export default class Card {
         this._cardLikebutton.addEventListener('click', handleLikeElement);
         this._cardRemovebutton.addEventListener('click', handleRemoveElement);
         this._elementImage.addEventListener('click', handleVeiwImage);
-
     }
 
     _getTemplate(selector) {

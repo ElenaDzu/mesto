@@ -1,6 +1,6 @@
 import Card from "./Card.js";
-import { enableValidation, data } from "./validate.js";
-console.log(enableValidation);
+import FormValidator from "./FormValidator.js";
+
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const popupCloseButtons = document.querySelectorAll('.popup__close-btn');
@@ -48,6 +48,8 @@ const initialCards = [
     image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+import {newCardValidation} from "./validate.js";
 
 export function openPopup(popup) {
   popup.classList.add(popupOpenedClass);
@@ -99,9 +101,8 @@ function handleAddElement(event) {
   event.preventDefault();
   setNewCard(inputValuePlace.value, inputValueLink.value); 
   closePopup(popupAddCard);
+  newCardValidation.endToggleButtonState()
   сardAddForm.reset();
-  buttonElement.classList.add(saveBtnInactive);
-  buttonElement.setAttribute('disabled', 'disabled');
 };
 
 buttonEditPopup.addEventListener('click', function() {
