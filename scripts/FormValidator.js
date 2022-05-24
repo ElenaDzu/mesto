@@ -36,19 +36,19 @@ export default class FormValidator {
         })
     };
    
-    endToggleButtonState () {
+    toggleButtonStateReopen () {
       this._elementSubmit.classList.add(this._saveBtnInactive);
       this._elementSubmit.setAttribute('disabled', 'disabled');
     }
 
     _toggleButtonState () {
         if (this._hasInvalidInput()) {
-          this.endToggleButtonState()
+          this.toggleButtonStateReopen()
         } else {
             this._elementSubmit.classList.remove(this._saveBtnInactive);
             this._elementSubmit.removeAttribute('disabled');
         }
-    };
+      };
 
     _getInputElements () {
         const that = this

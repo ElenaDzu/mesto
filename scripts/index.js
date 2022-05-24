@@ -1,15 +1,14 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const popupCloseButtons = document.querySelectorAll('.popup__close-btn');
 const popupCloseOverlays = document.querySelectorAll('.popup');
 const popupEdit = document.querySelector('.popup_edit');
 const popupAddCard = document.querySelector('.popup_add-newcard');
-const popupImage = document.querySelector('.popup_image');
-const imageBig = popupImage.querySelector('.popup__image-big');
-const imageName = popupImage.querySelector('.popup__image-name');
+export const popupImage = document.querySelector('.popup_image');
+export const imageBig = popupImage.querySelector('.popup__image-big');
+export const imageName = popupImage.querySelector('.popup__image-name');
 const popupOpenedClass = ('popup_opened');
 const popupText = document.querySelector('.popup__text');
 const profileForm = popupEdit.querySelector('.popup__container');
@@ -68,40 +67,31 @@ function handleProfileFormSubmit (event) {
   closePopup(popupEdit)
 }
 
+function createNewCard(title,image) {
+  return new Card(title, image, '.template')
+}
+
+function prependNewCard(card) {
+  listElement.prepend(card.generateCard());
+};
+
 function setNewCard(title,image) {
-  const card = new Card(title, image, '.template')
-  listElement.prepend(card.generateCard())
+  const card = createNewCard(title,image);
+  prependNewCard(card);
 };
 
 function render() {
   initialCards.forEach((item) => {
     setNewCard(item.title, item.image)
   }); 
-}
+};
 render()
-
-export function handleRemoveElement(evt) { 
-  const element = evt.target.closest('.element'); 
-  element.remove(); 
-} 
-
-export function handleLikeElement(evt) { 
-  evt.target.classList.toggle('element__icon_active'); 
-} 
-
-export function handleVeiwImage(event) {
-    imageBig.src = event.target.src 
-    imageBig.alt = event.target.src 
-    imageName.textContent = event.target.alt 
-    openPopup(popupImage) 
-  }
-
 
 function handleAddElement(event) {
   event.preventDefault();
   setNewCard(inputValuePlace.value, inputValueLink.value); 
   closePopup(popupAddCard);
-  newCardValidation.endToggleButtonState()
+  newCardValidation.toggleButtonStateReopen()
   сardAddForm.reset();
 };
 

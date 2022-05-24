@@ -1,7 +1,7 @@
 
 import FormValidator from "./FormValidator.js";
-export var profileValidation = null;
-export var newCardValidation = null;
+export let profileValidation = null;
+export let newCardValidation = null;
 
 export const enableValidation = (config) => {
   profileValidation = new FormValidator(config, document.querySelector('.popup_edit').querySelector('.popup__container'));
@@ -18,4 +18,3 @@ enableValidation({
   textTypeError: 'popup__text_type_error',
   inputErrorActive: 'popup__input-error_active' 
 });
-
