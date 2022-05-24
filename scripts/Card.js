@@ -7,13 +7,13 @@ export default class Card {
         this._selector = selector;
     };
 
-    _setEventListeners() {
+    _setEventListeners = () => {
         this._cardLikebutton.addEventListener('click', this._handleLikeElement);
         this._cardRemovebutton.addEventListener('click', this._handleRemoveElement);
         this._elementImage.addEventListener('click', this._handleVeiwImage);
     };
 
-    _handleLikeElement = (_cardLikebutton) => {
+    _handleLikeElement = () => {
         this._cardLikebutton.classList.toggle('element__icon_active');
     };
 
@@ -48,5 +48,5 @@ export default class Card {
         this._cardLikebutton = this._element.querySelector('.element__icon');
         this._setEventListeners();
         return this._element;
-      };
+    };
 };
