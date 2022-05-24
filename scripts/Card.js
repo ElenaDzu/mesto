@@ -23,10 +23,10 @@ export default class Card {
     };
 
     _handleVeiwImage(event) {
-        imageBig.src = event.target.src  
-        imageBig.alt = event.target.src  
-        imageName.textContent = event.target.alt  
-        openPopup(popupImage)
+        imageBig.src = event.target.src;
+        imageBig.alt = event.target.src;
+        imageName.textContent = event.target.alt;
+        openPopup(popupImage);
     };
 
     _getTemplate(selector) {
