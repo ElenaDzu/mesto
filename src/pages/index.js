@@ -1,5 +1,6 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import Card from "../components/Card.js"
+import Section from "../components/Section.js";
+import FormValidator from "../components/FormValidator.js";
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const popupCloseButtons = document.querySelectorAll('.popup__close-btn');
@@ -48,7 +49,7 @@ const initialCards = [
   }
 ];
 
-import {newCardValidation} from "./validate.js";
+import {newCardValidation} from "./validate.js"
 
 export function openPopup(popup) {
   popup.classList.add(popupOpenedClass);

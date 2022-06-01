@@ -1,5 +1,5 @@
 
-import FormValidator from "./FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 export let profileValidation = null;
 export let newCardValidation = null;
 
