@@ -20,6 +20,7 @@ const nameInput = profileForm.querySelector('.popup__text_value_name');
 const jobInput  = profileForm.querySelector('.popup__text_value_job');
 const listElement = document.querySelector('.elements-list');
 const template = document.querySelector('.template');
+const element = template.querySelector('.element')
 const inputValuePlace = document.querySelector('.popup__text_value_place');
 const inputValueLink = document.querySelector('.popup__text_value_link');
 const initialCards = [
@@ -49,7 +50,7 @@ const initialCards = [
   }
 ];
 
-import {newCardValidation} from "./validate.js"
+import {newCardValidation} from "../pages/validate.js"
 
 export function openPopup(popup) {
   popup.classList.add(popupOpenedClass);
@@ -67,8 +68,23 @@ function handleProfileFormSubmit (event) {
   jobProfile.textContent = jobInput.value
   closePopup(popupEdit)
 }
+const createNewCard = (item) => {
+  const card = new Card(
+    item.title, item.image,
+    '.template');
+  const newCard = card.generateCard();
+  return newCard;
+}
 
-function createNewCard(title,image) {
+const cardsList = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    cardsList.addItem(createNewCard(item));
+  }
+}, '.elements-list');
+cardsList.renderItems();
+
+/*function createNewCard(title,image) {
   return new Card(title, image, '.template')
 }
 
@@ -86,7 +102,7 @@ function render() {
     setNewCard(item.title, item.image)
   }); 
 };
-render()
+render()*/
 
 function handleAddElement(event) {
   event.preventDefault();
