@@ -1,15 +1,22 @@
 import Card from "../components/Card.js"
 import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import FormValidator from "../components/FormValidator.js";
+import {newCardValidation} from "../pages/validate.js"
+import PopupWithForm from "../components/PopupWithForm.js";
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const popupCloseButtons = document.querySelectorAll('.popup__close-btn');
 const popupCloseOverlays = document.querySelectorAll('.popup');
-const popupEdit = document.querySelector('.popup_edit');
-const popupAddCard = document.querySelector('.popup_add-newcard');
-export const popupImage = document.querySelector('.popup_image');
-export const imageBig = popupImage.querySelector('.popup__image-big');
-export const imageName = popupImage.querySelector('.popup__image-name');
+const popupEdit = new PopupWithForm('.popup_edit', function(event) {
+  console.log('submit Edit', this, event)
+});
+const popupAddCard = new PopupWithForm('.popup_add-newcard', function(event) {
+  console.log('submit Add', this, event)
+});
+const popupImage = new PopupWithImage('.popup_image');
+//export const imageBig = popupImage.querySelector('.popup__image-big');
+//export const imageName = popupImage.querySelector('.popup__image-name');
 const popupOpenedClass = ('popup_opened');
 const popupText = document.querySelector('.popup__text');
 const profileForm = popupEdit.querySelector('.popup__container');
@@ -18,7 +25,7 @@ const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const nameInput = profileForm.querySelector('.popup__text_value_name');
 const jobInput  = profileForm.querySelector('.popup__text_value_job');
-const listElement = document.querySelector('.elements-list');
+const listElements = document.querySelector('.elements-list');
 const template = document.querySelector('.template');
 const element = template.querySelector('.element')
 const inputValuePlace = document.querySelector('.popup__text_value_place');
@@ -50,9 +57,7 @@ const initialCards = [
   }
 ];
 
-import {newCardValidation} from "../pages/validate.js"
-
-export function openPopup(popup) {
+/*export function openPopup(popup) {
   popup.classList.add(popupOpenedClass);
   document.addEventListener('keydown', handleEscUp);
 }
@@ -60,7 +65,7 @@ export function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove(popupOpenedClass);
   document.removeEventListener('keydown', handleEscUp);
-}
+}*/
 
 function handleProfileFormSubmit (event) {
   event.preventDefault();
@@ -68,21 +73,29 @@ function handleProfileFormSubmit (event) {
   jobProfile.textContent = jobInput.value
   closePopup(popupEdit)
 }
+
 const createNewCard = (item) => {
   const card = new Card(
-    item.title, item.image,
-    '.template');
+  item.title, item.image,
+  '.template',
+  popupImage.openPopup
+  .bind(popupImage)
+  );
   const newCard = card.generateCard();
   return newCard;
 }
-
+ 
 const cardsList = new Section({
   items: initialCards,
   renderer: (item) => {
-    cardsList.addItem(createNewCard(item));
+    cardsList.addItem(createNewCard(item));//спросить что здесь происходит? еще раз
   }
 }, '.elements-list');
 cardsList.renderItems();
+
+//const popup = new Popup('.popup');
+
+
 
 /*function createNewCard(title,image) {
   return new Card(title, image, '.template')
@@ -106,7 +119,7 @@ render()*/
 
 function handleAddElement(event) {
   event.preventDefault();
-  setNewCard(inputValuePlace.value, inputValueLink.value); 
+  setNewCard(inputValuePlace.value, inputValueLink.value); //(?)
   closePopup(popupAddCard);
   newCardValidation.toggleButtonStateReopen()
   сardAddForm.reset();
@@ -122,7 +135,7 @@ buttonAddElement.addEventListener('click', function() {
   openPopup(popupAddCard)
 });
 
-popupCloseButtons.forEach((button) => {
+/*popupCloseButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
@@ -133,7 +146,7 @@ popupCloseOverlays.forEach((popup) => {
       closePopup(popup);
     }
   })
-});
+});*/
 
 const handleEscUp = (evt) => {
   if (evt.key === 'Escape') {
