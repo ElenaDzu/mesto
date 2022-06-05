@@ -1,16 +1,16 @@
-import {popupImage, imageBig, imageName, openPopup} from "../pages/index.js";
 
 export default class Card {
-    constructor(title, image, selector) {
+    constructor(title, image, selector,handleCardClick) {
         this._title = title;
         this._image = image;
         this._selector = selector;
+        this._handleCardClick = handleCardClick;
     };
 
     _setEventListeners = () => {
         this._cardLikebutton.addEventListener('click', this._handleLikeElement);
         this._cardRemovebutton.addEventListener('click', this._handleRemoveElement);
-        this._elementImage.addEventListener('click', this._handleVeiwImage);
+        this._elementImage.addEventListener('click', this._handleCardClick);
     };
 
     _handleLikeElement = () => {
@@ -20,13 +20,6 @@ export default class Card {
     _handleRemoveElement = () => {
         this._itemElement.remove();
         this._itemElement = null;
-    };
-
-    _handleVeiwImage(event) {
-        imageBig.src = event.target.src;
-        imageBig.alt = event.target.src;
-        imageName.textContent = event.target.alt;
-        openPopup(popupImage);
     };
 
     _getTemplate() {

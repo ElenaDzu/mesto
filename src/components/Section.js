@@ -9,7 +9,7 @@ export default class Section {
        addItem = (element) => {
         this._selector.append(element);
     };
-    
+
     renderItems() {
       this._items.forEach(item => {
         this._renderer(item); 
