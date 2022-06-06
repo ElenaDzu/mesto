@@ -5,6 +5,7 @@ import FormValidator from "../components/FormValidator.js";
 import {newCardValidation} from "../pages/validate.js"
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
+import './index.css';
 
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
