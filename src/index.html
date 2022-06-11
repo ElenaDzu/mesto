@@ -8,11 +8,11 @@
 <body class="container">
   <div class="page">
     <header class="header">
-      <a href="#"><img class="header header__logo" src="images/logo.png" alt="Логотип mesto"></a>
+      <a href="#"><img class="header header__logo" src="<%=require('./images/logo.png')%>"  alt="Логотип mesto"></a>
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="images/Kusto.jpg" alt="Изображен Жак-Ив Кусто">
+        <img class="profile__avatar" src="<%=require('./images/Kusto.jpg')%>" alt="Изображен Жак-Ив Кусто">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button class="profile__edit-btn" type="button"></button>
@@ -75,6 +75,5 @@
       </div>
     </li>
   </template>
-  <script type="module" src="pages/index.js"></script>
 </body>
 </html>

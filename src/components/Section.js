@@ -7,7 +7,7 @@ export default class Section {
     };
 
        addItem = (element) => {
-        this._selector.append(element);
+        this._selector.prepend(element);
     };
 
     renderItems() {
