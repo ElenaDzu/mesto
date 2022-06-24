@@ -5,6 +5,8 @@
   border-radius: 50%;
 }
 
+
+
 @media (max-width: 625px)and (min-width: 424px) {
   .profile__avatar {
     margin-right: auto;

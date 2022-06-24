@@ -1,10 +1,11 @@
 
 export default class Card {
-    constructor(title, image, selector,handleCardClick) {
+    constructor(title, image, selector,handleCardClick, likes = []) {
         this._title = title;
         this._image = image;
         this._selector = selector;
         this._handleCardClick = handleCardClick;
+        this._likes = likes;
     };
 
     _setEventListeners = () => {
@@ -38,7 +39,10 @@ export default class Card {
         this._elementImage.alt = this._title;
         this._element.querySelector('.element__title').textContent = this._title;
         this._cardRemovebutton = this._element.querySelector('.element__trash');
+        
         this._cardLikebutton = this._element.querySelector('.element__icon');
+        this._likesElement = this._element.querySelector('.element__counter');
+        this._likesElement.innerText = this._likes.length;
         this._setEventListeners();
         return this._element;
     };

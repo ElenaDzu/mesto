@@ -1,16 +1,29 @@
 import Card from "../components/Card.js"
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
+//import PopupWithSubmit from "../components/PopupWithSubmit.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
+import Api from "../components/Api.js";
 import './index.css';
 const buttonEditPopup = document.querySelector('.profile__edit-btn');
 const buttonAddElement = document.querySelector('.profile__add-btn');
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
-const userInfo = new UserInfo({nameSelector: nameProfile, dataSelector: jobProfile});
-const initialCards = [
+const avatarProfile = document.querySelector('.profile__avatar');
+const userInfo = new UserInfo({nameSelector: nameProfile, dataSelector: jobProfile, avatarSelector:avatarProfile});
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-43',
+  headers: {
+    authorization: '16d5d399-f287-4ea5-b24b-9feae8ea6a1a',
+    'Content-Type': 'application/json'
+  }
+});
+
+const initialCards = api.getInitialCards();
+
+/*const initialCards = [
   {
     title: 'Архыз',
     image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -35,7 +48,7 @@ const initialCards = [
     title: 'Байкал',
     image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-];
+];*/
 
 const validationConfig = {
   formInput: '.popup__text',
@@ -63,12 +76,17 @@ const addCardFormValidator = (config) => {
 addCardFormValidator(validationConfig);
 
 const popupEditProfile = new PopupWithForm('.popup_edit', function(inputs) {
+  //переделать на отсылку в api
   userInfo.setUserInfo(inputs['text-input'], inputs['job-input']);
+  api.setUserInfo(inputs['text-input'], inputs['job-input']);
   popupEditProfile.close();
 });
 
+//const popupUpdateProfile = new PopupWithForm('.popup_update-profile', function())
+
 const popupAddCard = new PopupWithForm('.popup_add-newcard', function (inputs) {
-  cardsList.addItem(createNewCard({title: inputs['place-input'], image: inputs['link-input']}))
+  cardsList.addItem(createNewCard({name: inputs['place-input'], link: inputs['link-input']}))
+  api.postCard(inputs['place-input'], inputs['link-input'])
   popupAddCard.close();
   newCardValidation.toggleButtonStateReopen();
 });
@@ -76,8 +94,8 @@ const popupAddCard = new PopupWithForm('.popup_add-newcard', function (inputs) {
 const popupImage = new PopupWithImage('.popup_image');
 
 const createNewCard = (item) => {
-  const card = new Card(item.title, item.image,'.template',
-  popupImage.open.bind(popupImage)
+  const card = new Card(item.name, item.link,'.template',
+  popupImage.open.bind(popupImage), item.likes
   );
   const newCard = card.generateCard();
   return newCard;
@@ -103,3 +121,9 @@ buttonAddElement.addEventListener('click', function() {
 popupEditProfile.setEventListeners();
 popupAddCard.setEventListeners();
 popupImage.setEventListeners();
+
+api.getUserInfo().then(data => {
+  userInfo.setUserInfo(data.name, data.about);
+  userInfo.setAvatar(data.avatar);
+  document.querySelector('.profile__id').innerText = data._id;
+});

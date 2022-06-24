@@ -13,8 +13,10 @@
     <main class="content">
       <section class="profile">
         <img class="profile__avatar" src="<%=require('./images/Kusto.jpg')%>" alt="Изображен Жак-Ив Кусто">
+        <button class="profile__avatar-btn" type="button"></button>
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <div class="profile__id"></div>
           <button class="profile__edit-btn" type="button"></button>
           <p class="profile__subtitle">Исследователь&nbsp;океана</p>
         </div>
@@ -55,6 +57,26 @@
       </form>
     </div>
   </section>
+  <section class="popup popup_confirm-removal">
+    <div class="popup__block">
+      <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
+      <form name="form" class="popup__container" novalidate>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button disabled type="submit" value="Сбросить" class="popup__save-btn">Да</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_update-profile">
+    <div class="popup__block">
+      <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
+      <form name="form" class="popup__container" novalidate>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <input id="link-input" required class="popup__text popup__text_value_link" value="" type="url" name="link" placeholder="Введите ссылку на изображение">
+        <span class="popup__input-error link-input-error"></span>
+        <button disabled type="submit" value="Сбросить" class="popup__save-btn">Сохранить</button>
+      </form>
+    </div>
+  </section>
   <section class="popup popup_image">
     <div class="popup__block">
       <button class="popup__close-btn popup__close-btn_image" type="reset"></button>
@@ -71,7 +93,10 @@
       <img class="element__image" src="#" alt="Изображен пейзаж">
       <div class="element__place">
         <h2 class="element__title"></h2>
-        <button class="element__icon" type="button"></button>
+        <div class="element__like">
+          <button class="element__icon" type="button"></button>
+          <div class="element__counter"></div>
+      </div>
       </div>
     </li>
   </template>
