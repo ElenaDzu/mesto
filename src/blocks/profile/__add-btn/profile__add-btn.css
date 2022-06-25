@@ -3,7 +3,7 @@
   margin: 35px 0 35px auto;
   background-color: #000000;
   background-size: 100%;
-  background-image: url(../../../images/Add\ Button.png);
+  background-image: url(../../../images/AddButton.png);
   width: 150px;
   height: 50px;
   border-style: none;
@@ -26,7 +26,7 @@
 
 @media (max-width: 625px)and (min-width: 424px) {
   .profile__add-btn {
-    background-image: url(../../../images/Add\ Button-320.png);
+    background-image: url(../../../images/AddButton320.png);
     width: 282px;
     height: 50px;
     margin-left: auto;
@@ -40,6 +40,6 @@
     margin-bottom: 0;
     width: 100%;
     height: 50px;
-    background-image: url(../../../images/Add\ Button-320.png);
+    background-image: url(../../../images/AddButton320.png);
   }
 }
