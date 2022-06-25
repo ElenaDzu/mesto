@@ -80,10 +80,10 @@ export default class Api {
     .then(this._getResult);
   }
 
-  setAvatar() {
-    let url = '/cards';
+  setAvatar(avatar) {
+    let url = '/users/me/avatar';
     return fetch(this.baseUrl + url, {
-      method: 'POST',
+      method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({
         avatar

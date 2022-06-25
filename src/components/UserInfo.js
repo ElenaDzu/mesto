@@ -11,7 +11,7 @@ getUserInfo() {
   }
 
 setAvatar(avatar) {
-  this._avatarSelector.src = avatar;
+  this._avatarSelector.style.backgroundImage = `url('${avatar}')`;
 }
 
 setUserInfo(title, subtitle) {
