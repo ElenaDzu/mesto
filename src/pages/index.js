@@ -87,7 +87,7 @@ const popupEditProfile = new PopupWithForm('.popup_edit', function(inputs) {
 
 const popupUpdateAvatar = new PopupWithForm('.popup_update-avatar', function(avatar) {
   popupUpdateAvatar.loaderStart();
-  api.setAvatar(avatar['link-input']).then (data => {
+  api.setAvatar(avatar['link-inp']).then (data => {
     popupUpdateAvatar.loaderStop();
     popupUpdateAvatar.close();
     avatarProfile.style.backgroundImage = `url('${data.avatar}')`;
