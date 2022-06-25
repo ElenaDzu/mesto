@@ -1,4 +1,5 @@
 .element__trash {
+  display: none;
   margin: 20px 20px 323px 244px;
   padding: 0;
   width: 18px;

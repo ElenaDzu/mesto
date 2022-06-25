@@ -12,8 +12,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/Kusto.jpg')%>" alt="Изображен Жак-Ив Кусто">
-        <button class="profile__avatar-btn" type="button"></button>
+        <div class="profile__avatar"></div>
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <div class="profile__id"></div>
@@ -62,7 +61,7 @@
       <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
       <form name="form" class="popup__container" novalidate>
         <h2 class="popup__title">Вы уверены?</h2>
-        <button disabled type="submit" value="Сбросить" class="popup__save-btn">Да</button>
+        <input type="submit" value="Да" class="popup__save-btn">
       </form>
     </div>
   </section>
