@@ -18,7 +18,7 @@ close = () => {
 
 _handleEscClose = (evt) => {
   if (evt.key === 'Escape') {
-    this.close('popup_opened');
+    this.close();
   };
 };
 
@@ -26,7 +26,7 @@ setEventListeners() {
   this._popupCloseButton.addEventListener('click', this.close);
   this._popupCloseOverlay.addEventListener('mousedown', (evt) => {
       if (evt.target.classList.contains('popup')) {
-        this.close(this._popup); 
+        this.close(); 
     }
   });
 };

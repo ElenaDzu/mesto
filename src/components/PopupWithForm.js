@@ -13,7 +13,7 @@ setEventListeners() {
 };
 _onSubmit(event) {
   event.preventDefault();
-  this._handlerSubmitEvent.call(event.target, this._getInputValues());
+  this._handlerSubmitEvent(this._getInputValues());
 };
 
 close() {

@@ -8,7 +8,7 @@ export default class PopupWithImage extends Popup {
 
   open(event) {
     this._imageBig.src = event.target.src;
-    this._imageBig.alt = event.target.src;
+    this._imageBig.alt = event.target.alt;
     this._imageName.textContent = event.target.alt;
     super.open();
     }

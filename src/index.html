@@ -15,7 +15,6 @@
         <div class="profile__avatar"></div>
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <div class="profile__id"></div>
           <button class="profile__edit-btn" type="button"></button>
           <p class="profile__subtitle">Исследователь&nbsp;океана</p>
         </div>
@@ -70,8 +69,8 @@
       <button class="popup__close-btn popup__close-btn_add" type="reset"></button>
       <form name="form" class="popup__container" novalidate>
         <h2 class="popup__title">Обновить аватар</h2>
-        <input id="link-inp" required class="popup__text popup__text_value_link" value="" type="url" name="link" placeholder="Введите ссылку на изображение">
-        <span class="popup__input-error link-input-error"></span>
+        <input id="link-inp" required class="popup__text popup__text_value_link" value="" type="url" name="link" minlength="2" placeholder="Введите ссылку на изображение">
+        <span class="popup__input-error link-inp-error"></span>
         <button type="submit" value="Сбросить" class="popup__save-btn">Сохранить</button>
       </form>
     </div>
